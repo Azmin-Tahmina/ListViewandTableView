@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListEx1.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="SampleListView"
+                  RowHeight="50"
+                  ItemTapped="OnItemTapped">
+            <ListView.Header>
+                <Label Text="Header" HorizontalOptions="Center" />
+            </ListView.Header>
+            <ListView.Footer>
+                <Label Text="Footer" HorizontalOptions="Center"/>
+            </ListView.Footer>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Name}" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
