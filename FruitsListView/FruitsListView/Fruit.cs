@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FruitsListView
@@ -12,14 +14,38 @@ namespace FruitsListView
         public string Name
         {
             get { return this.fName; }
-            set { this.fName = value; }
+            set
+            {
+                if (value != this.fDesc)
+                {
+                    this.fDesc = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public string Description
         {
             get { return this.fDesc; }
-            set { this.fDesc = value; }
+            set
+            {
+                if (value != this.fDesc)
+                {
+                    this.fDesc = value;
+                    OnPropertyChanged();
+                }
+            }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string property = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
 
     }
 }
