@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TableViewBasic.MainPage"
+             Title="Fruits Table">
+
+    <StackLayout>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Fruit Details">
+                    <TextCell Text="Fruit" Detail="Apple" />
+                    <TextCell Text="Color" Detail="Red" />
+                    <TextCell Text="Taste" Detail="Sweet" />
+                </TableSection>
+                <TableSection Title="More Fruits">
+                    <TextCell Text="Fruit" Detail="Banana" />
+                    <TextCell Text="Color" Detail="Yellow" />
+                    <TextCell Text="Taste" Detail="Sweet" />
+                    <!-- Add more fruits as needed -->
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+
+</ContentPage>
