@@ -21,7 +21,7 @@ namespace ListViewFromCodeX
             var label = new Label();
             label.VerticalOptions = LayoutOptions.Center;
             label.HorizontalOptions = LayoutOptions.StartAndExpand;
-            label.SetBinding(Label.TabIndexProperty,"Name");
+            label.SetBinding(Label.TextProperty,"Name");
 
             // another way
             //var label = new Label
@@ -41,12 +41,13 @@ namespace ListViewFromCodeX
             //};
 
 
-            //button.Clicked += (sender, e) => {
-            //    // Handle the button click event
-            //    // You can access the BindingContext to get the item data
-            //    var item = (Item)this.BindingContext;
-            //    Application.Current.MainPage.DisplayAlert("Button Clicked", item.Name, "OK");
-            //};
+            button.Clicked += (sender, e) =>
+            {
+                // Handle the button click event
+                // You can access the BindingContext to get the item data
+                var item = (Item)this.BindingContext;
+                Application.Current.MainPage.DisplayAlert("Button Clicked", item.Name, "OK");
+            };
 
             var stackLayout = new StackLayout();
             stackLayout.Orientation = StackOrientation.Horizontal;
